@@ -13,7 +13,7 @@
 
 
     <!-- <link rel="icon" href="./assets/icon/favicon2.ico"> -->
-    <link rel="stylesheet" href="css/estiloCadastro.css">
+    <link rel="stylesheet" href="./css/estiloCadastro.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -27,16 +27,16 @@
         </div>
         <div class="titulo_cadastro">Cadastro</div>
         <div class="inputs">
-            <input class="input_cadastro" placeholder="Nome">
-            <input class="input_cadastro" placeholder="Email">
-            <input class="input_cadastro" type="password" placeholder="Senha">
-            <input class="input_cadastro" type="password" placeholder="Confirmar Senha">
+            <input class="input_nome" placeholder="Nome">
+            <input class="input_email" placeholder="Email">
+            <input class="input_senha" type="password" placeholder="Senha">
+            <input class="input_confirmacao_senha" type="password" placeholder="Confirmar Senha">
         </div>
         <a href="login.html">
             <button>Cadastrar</button>
         </a>
     </div>
-    <div class="logo_cadastro">
+    <div class="Img_cadastro">
         <img src="assets/imagem Cadastro.svg">
     </div>
 </body>
@@ -49,10 +49,10 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var nomeVar = input_nome.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var confirmacaoSenhaVar = input_confirmacao_senha.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
@@ -76,7 +76,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                // confirmacaoSenhaServer: confirmacaoSenhaVar 
             })
         }).then(function (resposta) {
 

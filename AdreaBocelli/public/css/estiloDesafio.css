@@ -1,0 +1,11 @@
+.jogo_select {
+    display: flex;
+}
+
+.coluna_caracteristicas {
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+    background-color: yellow;
+    height: 40%;
+}
