@@ -1,11 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&family=Nunito&family=Roboto:wght@300;400&family=Satisfy&display=swap');
+
+body {
+    margin: 0;
+        /* display: grid;
+        justify-self: center; */
+}
+
 .jogo_select {
     display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
 }
 
 .coluna_caracteristicas {
     display: flex;
     flex-direction: column;
-    width: 16%;
-    background-color: yellow;
+    /* width: 16%; */
     height: 40%;
+}
+
+.coluna_casa1 {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.pai_de_tudo {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.titulo_desafio {
+    display: flex;
+    justify-content: center;
+    font-family: "Bebas Neue";
+    font-size: 30px;
+}
+
+.instrucoes_jogo_select {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    font-family: "Nunito";
+}
+
+.lado_esquerdo_instrucoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lado_direito_instrucoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.coluna_casa1 input {
+    width: 200px;
 }

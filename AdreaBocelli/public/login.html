@@ -28,12 +28,10 @@
         </div>
         <div class="titulo_login">Login</div>
         <div class="inputs_login">
-            <input class="input_login" placeholder="Email">
-            <input class="input_senha" type="password" placeholder="Senha">
+            <input id="input_email" class="input_login" placeholder="Email">
+            <input id="input_senha" class="input_senha" type="password" placeholder="Senha">
         </div>
-        <a href="">
-            <button>Login</button>
-        </a>
+            <button onclick="entrar()">Login</button>
         <div class="rodape">
             Não é cadastrado? <a href="cadastro.html"><span><u>Cadastre-se</u></span></a>
         </div>
@@ -45,21 +43,21 @@
 <script>
 
     function entrar() {
-        aguardar();
+        // aguardar();
 
-        var emailVar = input_login.value;
+        var emailVar = input_email.value;
         var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
             alert("Algum campo está vazio")
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            /* cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)"; */
             finalizarAguardar();
             return false;
         }
-        else {
+        /* else {
             setInterval(sumirMensagem, 5000)
-        }
+        } */
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -88,7 +86,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "interacao.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -110,8 +108,8 @@
         return false;
     }
 
-    function sumirMensagem() {
+    /* function sumirMensagem() {
         cardErro.style.display = "none"
-    }
+    } */
 
 </script>

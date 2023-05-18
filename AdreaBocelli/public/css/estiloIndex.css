@@ -109,6 +109,7 @@ body {
   align-items: center;
   gap: 30px;
   text-align: justify;
+  padding: 0 0 0 40px;
 }
 
 .interseccao {
@@ -127,6 +128,7 @@ body {
   align-items: center;
   /* gap: 500px; */
   text-align: justify;
+  padding: 0 40px 0 0;
 }
 
 .conteudo_enquanto_crianca {
@@ -160,7 +162,7 @@ body {
 }
 
 .esquerdo_quinto_texto {
-  margin-top: 600px;
+  margin-top: 550px;
 }
 
 .nav_bar .botao_login {
@@ -173,4 +175,74 @@ body {
   width: 150px;
   height: 50px;
   border: 3px solid #ffffff;
+}
+
+.titulo_tenor {
+  font-family: "Bebas Neue";
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  padding: 70px 0 0 0;
+}
+
+.introducao_tenor {
+  display: flex;
+  text-align: justify;
+}
+
+.alcance_masculino {
+  width: 42.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #ffffff;
+  font-family: "Nunito";
+  font-size: 20px;
+  padding: 0 0 0 50px;
+}
+
+.masculino {
+  display: flex;
+  font-size: 26px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue";
+}
+
+.titulo_masculino {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  font-family: "Bebas Neue";
+}
+
+.espacamento {
+  width: 15%;
+}
+
+.alcance_feminino {
+  width: 42.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #ffffff;
+  font-family: "Nunito";
+  font-size: 20px;
+  padding: 0 50px 0 0;
+}
+
+.titulo_feminino {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  font-family: "Bebas Neue";
+}
+
+.feminino {
+  display: flex;
+  font-size: 26px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue";
 }

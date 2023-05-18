@@ -27,14 +27,15 @@
         </div>
         <div class="titulo_cadastro">Cadastro</div>
         <div class="inputs">
-            <input class="input_nome" placeholder="Nome">
-            <input class="input_email" placeholder="Email">
-            <input class="input_senha" type="password" placeholder="Senha">
-            <input class="input_confirmacao_senha" type="password" placeholder="Confirmar Senha">
+            <input id="input_nome" class="input_nome" placeholder="Nome">
+            <input id="input_email" class="input_email" placeholder="Email">
+            <input id="input_senha" class="input_senha" type="password" placeholder="Senha">
+            <input id="input_confirmacao_senha" class="input_confirmacao_senha" type="password"
+                placeholder="Confirmar Senha">
         </div>
-        <a href="login.html">
-            <button>Cadastrar</button>
-        </a>
+        
+            <button onclick="cadastrar()">Cadastrar</button>
+        
     </div>
     <div class="Img_cadastro">
         <img src="assets/imagem Cadastro.svg">
@@ -45,7 +46,7 @@
 
 <script>
     function cadastrar() {
-        aguardar();
+        // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -55,15 +56,16 @@
         var confirmacaoSenhaVar = input_confirmacao_senha.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert(`Preencha todos os campos`)
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
             finalizarAguardar();
             return false;
         }
-        else {
+        /* else {
             setInterval(sumirMensagem, 5000)
-        }
+        } */
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -77,18 +79,17 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                // confirmacaoSenhaServer: confirmacaoSenhaVar 
+                confirmacaoSenhaServer: confirmacaoSenhaVar 
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
+                /* cardErro.style.display = "block";
 
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                setTimeout(() => {
+ */                setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
 
@@ -105,8 +106,8 @@
         return false;
     }
 
-    function sumirMensagem() {
+    /* function sumirMensagem() {
         cardErro.style.display = "none"
-    }
+    } */
 
 </script>
