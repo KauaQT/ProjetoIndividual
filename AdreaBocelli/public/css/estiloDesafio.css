@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&family=Nunito&family=Roboto:wght@300;400&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis&family=Inter&family=Nunito&family=Roboto:wght@300;400&family=Satisfy&display=swap');
 
 body {
     margin: 0;
-        /* display: grid;
-        justify-self: center; */
 }
 
 .jogo_select {
@@ -17,14 +16,32 @@ body {
 .coluna_caracteristicas {
     display: flex;
     flex-direction: column;
-    /* width: 16%; */
     height: 40%;
+    font-family: "Dosis";
+    font-size: 20px;
 }
 
 .coluna_casa1 {
     list-style: none;
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+}
+
+.coluna_casa1 select{
+    width: 200px;
+    height: 21px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.coluna_casa1 .titulo_casas {
+    font-size: 20px;
+    font-weight: 900;
+    font-family: "Dosis";
 }
 
 .pai_de_tudo {
@@ -37,7 +54,7 @@ body {
     display: flex;
     justify-content: center;
     font-family: "Bebas Neue";
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .instrucoes_jogo_select {
@@ -45,6 +62,8 @@ body {
     justify-content: center;
     gap: 100px;
     font-family: "Nunito";
+    font-size: 22px;
+    flex-direction: row;
 }
 
 .lado_esquerdo_instrucoes {
@@ -57,8 +76,4 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.coluna_casa1 input {
-    width: 200px;
 }

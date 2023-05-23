@@ -17,6 +17,27 @@ body {
   gap: 400px;
 }
 
+
+.nav_bar div a {
+  position: relative;
+}
+
+.frescura::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2.65px;
+  left: 0;
+  background-color: #ffffff;
+  transition: .5s ease-in-out;
+  bottom: -5px;
+  border-radius: 4px;
+}
+
+.frescura:hover::after {
+  width: 100%;
+}
+
 .segurar_lista {
   display: flex;
   justify-content: center;
@@ -39,6 +60,8 @@ body {
   font-size: 28px;
   font-family: "Bebas Neue";
   border: 5px, solid, #ffffff;
+  cursor: pointer;
+  
 }
 
 .conteudo_inicial {
@@ -246,3 +269,67 @@ body {
   justify-content: center;
   font-family: "Bebas Neue";
 }
+
+.segurar_carrosel {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.carrosel {
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.4s;
+  background-color: yellow;
+}
+
+.slides {
+  width: 2120px;
+  display: flex;
+}
+
+#atual {
+  margin-left: 0;
+  transition: all 2s;
+}
+
+.botao {
+  position: absolute;
+  color: #ffffff;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  font-size: 20px;
+}
+
+.botao:hover {
+  transform: scale(1.5)
+}
+
+/* #voltar {
+  top: 50%;
+  left: 10%;
+}  */
+
+/* 
+#avancar {
+  top: 50%;
+  right: 10%;
+}
+
+.balls {
+  position: absolute;
+  width: 1024px;
+  display: flex;
+  justify-content: center;
+  margin-top: -45px;
+} */
