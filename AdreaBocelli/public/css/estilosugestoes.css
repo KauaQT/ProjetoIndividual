@@ -1,45 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis&family=Inter&family=Nunito&family=Roboto:wght@300;400&family=Satisfy&display=swap');
 
 body {
     margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #193E70, #000000);
+    /* background-color: #000000; */
+    background: radial-gradient(137.79% 137.79% at 52.26% 50%, #175cff 0%, #000000 100%);
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    width: inherit;
+    height: inherit;
+}
+
+.logo img {
+    height: 150px;
 }
 
 .nav_bar_lateral {
     width: 15%;
-    height: 100vh;
-    border-right: #000000;
+    height: 745px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    background-color: yellow;
+    justify-content: center;
+    gap: 120px;
+    border-right: 4px solid #ffffff
 }
 
-.image_logo {
-    display: flex;
-    padding: 50px;
-}
-
-.lista_topicos {
-    list-style: none;
-    color: #ffffff;
-    font-family: "Bebas Neue";
-    font-size: 30px;
+.topicos {
     display: flex;
     flex-direction: column;
+    font-family: "Bebas Neue";
+    font-size: 30px;
+    gap: 15px;
+    align-items: center;
+}
+
+.topicos a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.rodape_nav_bar_lateral a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.rodape_nav_bar_lateral {
+    font-family: "Bebas Neue";
+    font-size: 40px;
+}
+
+.conteudo_sugestoes {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 10px 0 10px;
+}
+
+.titulo_sugestoes {
+    font-family: 'Bebas Neue';
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.segurar_colunas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.coluna_bocelli {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    /* gap: 30px; */
+}
+
+.coluna_pausini {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+
+    /* gap: 30px; */
+}
+
+.coluna_pavarotti {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    
+    /* gap: 30px; */
+}
+
+.texto_bocelli {
+    color: #ffffff;
+    font-family: "Nunito";
+    font-size: 20px;
+    text-align: center;
+}
+
+.texto_pausini {
+    color: #ffffff;
+    font-family: "Nunito";
+    font-size: 20px;
+    text-align: center;
+}
+
+.texto_pavarotti {
+    color: #ffffff;
+    font-family: "Nunito";
+    font-size: 20px;
+    text-align: center;
+}
+
+.convite {
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.voltar {
+.convite button {
+    background: none;
+    border: 3.5px solid #ffffff;
     color: #ffffff;
-    font-size: 40px;
-    text-decoration: none;
-    font-family: "Bebas Neue";
+    font-size: 20px;
+    font-family: "Nunito";
+    border-radius: 10px;
+    height: 45px;
+    cursor: pointer;
 }
 
-.voltar a {
-    text-decoration: none;
+.convite button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 7px 4px #ffffff;
 }

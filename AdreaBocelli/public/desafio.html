@@ -11,8 +11,20 @@
 </head>
 
 <body>
-    <div class="titulo_desafio">
+    <div class="topo">
         <h2>Desafio</h2>
+        <div class="container">
+            <div class="timer">
+                <button id="startbtn">
+                <div class="tempo" id="minutes">00</div>
+                <div class="separator">:</div>
+                <div class="tempo" id="seconds">00</div>
+            </button>
+            </div>
+            <!-- <div class="buttons">
+                <button class="btn" id="start">Iniciar</button>
+            </div> -->
+        </div>
     </div>
     <div class="pai_de_tudo">
         <div class="jogo_select">
@@ -29,7 +41,7 @@
                 <div>
                     <select id="casa1_selectCor">
                         <option value=""></option>
-                        <option value="Amarelo">Amarela</option>
+                        <option value="1">Amarelo</option>
                         <option value="2">Azul</option>
                         <option value="3">Branca</option>
                         <option value="4">Verde</option>
@@ -39,41 +51,41 @@
                 <div>
                     <select id="casa1_selectCantores"> 
                         <option value=""></option>
-                        <option value="1">Andrea Bocelli</option>
-                        <option value="2">Laura Pausini</option>
-                        <option value="3">Luciano Pavarotti</option>
-                        <option value="4">Zucchero Fornaciari</option>
-                        <option value="5">Andre Rieu</option>
+                        <option value="Andrea Bocelli">Andrea Bocelli</option>
+                        <option value="Laura Pausini">Laura Pausini</option>
+                        <option value="Luciano Pavarotti">Luciano Pavarotti</option>
+                        <option value="Zucchero Fornaciari">Zucchero Fornaciari</option>
+                        <option value="Andre Rieu">Andre Rieu</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa1_selectBebida">
                         <option value=""></option>
-                        <option value="1">Água</option>
-                        <option value="2">café</option>
-                        <option value="3">Chá</option>
-                        <option value="4">Vinho</option>
-                        <option value="5">Leite</option>
+                        <option value="Água">Água</option>
+                        <option value="Café">Café</option>
+                        <option value="Chá">Chá</option>
+                        <option value="Vinho">Vinho</option>
+                        <option value="Leite">Leite</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa1_selectInstrumento">
                         <option value=""></option>
-                        <option value="1">Piano</option>
-                        <option value="2">Violino</option>
-                        <option value="3">Harpa</option>
-                        <option value="4">Flauta</option>
-                        <option value="5">Trombone</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Violino">Violino</option>
+                        <option value="Harpa">Harpa</option>
+                        <option value="Flauta">Flauta</option>
+                        <option value="Trombone">Trombone</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa1_selectAnimal">
                         <option value=""></option>
-                        <option value="1">Cachorros</option>
-                        <option value="2">Cavalos</option>
-                        <option value="3">Gatos</option>
-                        <option value="4">Pássaros</option>
-                        <option value="5">Peixes</option>
+                        <option value="Cachorros">Cachorros</option>
+                        <option value="Cavalos">Cavalos</option>
+                        <option value="Gatos">Gatos</option>
+                        <option value="Pássaros">Pássaros</option>
+                        <option value="Peixes">Peixes</option>
                     </select>
                 </div>
             </div>
@@ -82,51 +94,51 @@
                 <div>
                     <select id="casa2_selectCor">
                         <option value=""></option>
-                        <option value="1">Amarela</option>
-                        <option value="2">Azul</option>
-                        <option value="3">Branca</option>
-                        <option value="4">Verde</option>
-                        <option value="5">Vermelha</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Branca">Branca</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelha">Vermelha</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa2_selectCantores">
                         <option value=""></option>
-                        <option value="1">Andrea Bocelli</option>
-                        <option value="2">Laura Pausini</option>
-                        <option value="3">Luciano Pavarotti</option>
-                        <option value="4">Zucchero Fornaciari</option>
-                        <option value="5">Andre Rieu</option>
+                        <option value="Andrea Bocelli">Andrea Bocelli</option>
+                        <option value="Laura Pausini">Laura Pausini</option>
+                        <option value="Luciano Pavarotti">Luciano Pavarotti</option>
+                        <option value="Zucchero Fornaciari">Zucchero Fornaciari</option>
+                        <option value="Andre Rieu">Andre Rieu</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa2_selectBebida">
                         <option value=""></option>
-                        <option value="1">Água</option>
-                        <option value="2">café</option>
-                        <option value="3">Chá</option>
-                        <option value="4">Vinho</option>
-                        <option value="5">Leite</option>
+                        <option value="Água">Água</option>
+                        <option value="Café">Café</option>
+                        <option value="Chá">Chá</option>
+                        <option value="Vinho">Vinho</option>
+                        <option value="Leite">Leite</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa2_selectInstrumento">
                         <option value=""></option>
-                        <option value="1">Piano</option>
-                        <option value="2">Violino</option>
-                        <option value="3">Harpa</option>
-                        <option value="4">Flauta</option>
-                        <option value="5">Trombone</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Violino">Violino</option>
+                        <option value="Harpa">Harpa</option>
+                        <option value="Flauta">Flauta</option>
+                        <option value="Trombone">Trombone</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa2_selectAnimal">
                         <option value=""></option>
-                        <option value="1">Cachorros</option>
-                        <option value="2">Cavalos</option>
-                        <option value="3">Gatos</option>
-                        <option value="4">Pássaros</option>
-                        <option value="5">Peixes</option>
+                        <option value="Cachorros">Cachorros</option>
+                        <option value="Cavalos">Cavalos</option>
+                        <option value="Gatos">Gatos</option>
+                        <option value="Pássaros">Pássaros</option>
+                        <option value="Peixes">Peixes</option>
                     </select>
                 </div>
             </div>
@@ -135,51 +147,51 @@
                 <div>
                     <select id="casa3_selectCor">
                         <option value=""></option>
-                        <option value="1">Amarela</option>
-                        <option value="2">Azul</option>
-                        <option value="3">Branca</option>
-                        <option value="4">Verde</option>
-                        <option value="5">Vermelha</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Branca">Branca</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelha">Vermelha</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa3_selectCantores">
                         <option value=""></option>
-                        <option value="1">Andrea Bocelli</option>
-                        <option value="2">Laura Pausini</option>
-                        <option value="3">Luciano Pavarotti</option>
-                        <option value="4">Zucchero Fornaciari</option>
-                        <option value="5">Andre Rieu</option>
+                        <option value="Andrea Bocelli">Andrea Bocelli</option>
+                        <option value="Laura Pausini">Laura Pausini</option>
+                        <option value="Luciano Pavarotti">Luciano Pavarotti</option>
+                        <option value="Zucchero Fornaciari">Zucchero Fornaciari</option>
+                        <option value="Andre Rieu">Andre Rieu</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa3_selectBebida">
                         <option value=""></option>
-                        <option value="1">Água</option>
-                        <option value="2">café</option>
-                        <option value="3">Chá</option>
-                        <option value="4">Vinho</option>
-                        <option id="validacao" value="5">Leite</option>
+                        <option value="Água">Água</option>
+                        <option value="Café">Café</option>
+                        <option value="Chá">Chá</option>
+                        <option value="Vinho">Vinho</option>
+                        <option value="Leite">Leite</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa3_selectInstrumento">
                         <option value=""></option>
-                        <option value="1">Piano</option>
-                        <option value="2">Violino</option>
-                        <option value="3">Harpa</option>
-                        <option value="4">Flauta</option>
-                        <option value="5">Trombone</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Violino">Violino</option>
+                        <option value="Harpa">Harpa</option>
+                        <option value="Flauta">Flauta</option>
+                        <option value="Trombone">Trombone</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa3_selectAnimal">
                         <option value=""></option>
-                        <option value="1">Cachorros</option>
-                        <option value="2">Cavalos</option>
-                        <option value="3">Gatos</option>
-                        <option value="4">Pássaros</option>
-                        <option value="5">Peixes</option>
+                        <option value="Cachorros">Cachorros</option>
+                        <option value="Cavalos">Cavalos</option>
+                        <option value="Gatos">Gatos</option>
+                        <option value="Pássaros">Pássaros</option>
+                        <option value="Peixes">Peixes</option>
                     </select>
                 </div>
             </div>
@@ -188,51 +200,51 @@
                 <div>
                     <select id="casa4_selectCor">
                         <option value=""></option>
-                        <option value="1">Amarela</option>
-                        <option value="2">Azul</option>
-                        <option value="3">Branca</option>
-                        <option value="4">Verde</option>
-                        <option value="5">Vermelha</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Branca">Branca</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelha">Vermelha</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa4_selectCantores">
                         <option value=""></option>
-                        <option value="1">Andrea Bocelli</option>
-                        <option value="2">Laura Pausini</option>
-                        <option value="3">Luciano Pavarotti</option>
-                        <option value="4">Zucchero Fornaciari</option>
-                        <option value="5">Andre Rieu</option>
+                        <option value="Andrea Bocelli">Andrea Bocelli</option>
+                        <option value="Laura Pausini">Laura Pausini</option>
+                        <option value="Luciano Pavarotti">Luciano Pavarotti</option>
+                        <option value="Zucchero Fornaciari">Zucchero Fornaciari</option>
+                        <option value="Andre Rieu">Andre Rieu</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa4_selectBebida">
                         <option value=""></option>
-                        <option value="1">Água</option>
-                        <option value="2">café</option>
-                        <option value="3">Chá</option>
-                        <option value="4">Vinho</option>
-                        <option value="5">Leite</option>
+                        <option value="Água">Água</option>
+                        <option value="Café">Café</option>
+                        <option value="Chá">Chá</option>
+                        <option value="Vinho">Vinho</option>
+                        <option value="Leite">Leite</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa4_selectInstrumento">
                         <option value=""></option>
-                        <option value="1">Piano</option>
-                        <option value="2">Violino</option>
-                        <option value="3">Harpa</option>
-                        <option value="4">Flauta</option>
-                        <option value="5">Trombone</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Violino">Violino</option>
+                        <option value="Harpa">Harpa</option>
+                        <option value="Flauta">Flauta</option>
+                        <option value="Trombone">Trombone</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa4_selectAnimal">
                         <option value=""></option>
-                        <option value="1">Cachorros</option>
-                        <option value="2">Cavalos</option>
-                        <option value="3">Gatos</option>
-                        <option value="4">Pássaros</option>
-                        <option value="5">Peixes</option>
+                        <option value="Cachorros">Cachorros</option>
+                        <option value="Cavalos">Cavalos</option>
+                        <option value="Gatos">Gatos</option>
+                        <option value="Pássaros">Pássaros</option>
+                        <option value="Peixes">Peixes</option>
                     </select>
                 </div>
             </div>
@@ -241,51 +253,51 @@
                 <div>
                     <select id="casa5_selectCor">
                         <option value=""></option>
-                        <option value="1">Amarela</option>
-                        <option value="2">Azul</option>
-                        <option value="3">Branca</option>
-                        <option value="4">Verde</option>
-                        <option value="5">Vermelha</option>
+                        <option value="Amarelo">Amarel</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Branca">Branca</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelha">Vermelha</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa5_selectCantores">
                         <option value=""></option>
-                        <option value="1">Andrea Bocelli</option>
-                        <option value="2">Laura Pausini</option>
-                        <option value="3">Luciano Pavarotti</option>
-                        <option value="4">Zucchero Fornaciari</option>
-                        <option value="5">Andre Rieu</option>
+                        <option value="Andrea Bocelli">Andrea Bocelli</option>
+                        <option value="Laura Pausini">Laura Pausini</option>
+                        <option value="Luciano Pavarotti">Luciano Pavarotti</option>
+                        <option value="Zucchero Fornaciari">Zucchero Fornaciari</option>
+                        <option value="Andre Rieu">Andre Rieu</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa5_selectBebida">
                         <option value=""></option>
-                        <option value="1">Água</option>
-                        <option value="2">café</option>
-                        <option value="3">Chá</option>
-                        <option value="4">Vinho</option>
-                        <option value="5">Leite</option>
+                        <option value="Água">Água</option>
+                        <option value="Café">Café</option>
+                        <option value="Chá">Chá</option>
+                        <option value="Vinho">Vinho</option>
+                        <option value="Leite">Leite</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa5_selectInstrumento">
                         <option value=""></option>
-                        <option value="1">Piano</option>
-                        <option value="2">Violino</option>
-                        <option value="3">Harpa</option>
-                        <option value="4">Flauta</option>
-                        <option value="5">Trombone</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Violino">Violino</option>
+                        <option value="Harpa">Harpa</option>
+                        <option value="Flauta">Flauta</option>
+                        <option value="Trombone">Trombone</option>
                     </select>
                 </div>
                 <div>
                     <select id="casa5_selectAnimal">
                         <option value=""></option>
-                        <option value="1">Cachorros</option>
-                        <option value="2">Cavalos</option>
-                        <option value="3">Gatos</option>
-                        <option value="4">Pássaros</option>
-                        <option value="5">Peixes</option>
+                        <option value="Cachorros">Cachorros</option>
+                        <option value="Cavalos">Cavalos</option>
+                        <option value="Gatos">Gatos</option>
+                        <option value="Pássaros">Pássaros</option>
+                        <option value="Peixes">Peixes</option>
                     </select>
                 </div>
             </div>
@@ -349,52 +361,53 @@
 
 <script>
 
-// var select = document.getElementById('casa1_selectCor')
+var respostasColuna1 = []
+var respostasColuna2 = []
+var respostasColuna3 = []
+var respostasColuna4 = []
+var respostasColuna5 = []
 
-// select.addEventListener('change', function(){
-//     console.log(select.value)
-// })
+function validar() {
 
-    var cor = [casa1_selectCor.value, casa2_selectCor.value, casa3_selectCor.value, casa4_selectCor.value, casa5_selectCor.value]
-    var cantores = [casa1_selectCantores.value, casa2_selectCantores.value, casa3_selectCantores.value, casa4_selectCantores.value, casa5_selectCantores.value]
-    var bebida = [casa1_selectBebida.value, casa2_selectBebida.value, casa3_selectBebida.value, casa4_selectBebida.value, casa5_selectBebida.value]
-    var instrumento = [casa1_selectInstrumento.value, casa2_selectInstrumento.value, casa3_selectInstrumento.value, casa4_selectInstrumento.value, casa5_selectInstrumento.value]
-    var animal = [casa1_selectAnimal.value, casa2_selectAnimal.value, casa3_selectAnimal.value, casa4_selectAnimal.value, casa5_selectAnimal.value]
-
-    var auxiliar1Correto = ["Amarelo", "Zucchero Fornaciari", "Água", "Harpa", "Gatos"]
-    var auxiliar2Correto = ["Azul", "Laura Pausini", "Chá", "Piano", "Cavalos"]
-    var auxiliar3Correto = ["Vermelha", "Luciano Pavarotti", "Leite", "Flauta", "Passáros"]
-    var auxiliar4Correto = ["Verde", "Andrea Bocelli", "Café", "Trombone", "Peixes"]
-    var auxiliar5Correto = ["Branco", "Andre Rieu", "Vinho", "Violino", "Cachorros"]
-
-    var respostasColuna1 = []
-    var respostasColuna2 = []
-    var respostasColuna3 = []
-    var respostasColuna4 = []
-    var respostasColuna5 = []
-    
-    function validar() {
         respostasColuna1.push(cor[1], cantores[1], bebida[1], instrumento[1], animal[1])
         respostasColuna2.push(cor[2], cantores[2], bebida[2], instrumento[2], animal[2])
         respostasColuna3.push(cor[3], cantores[3], bebida[3], instrumento[3], animal[3])
         respostasColuna4.push(cor[4], cantores[4], bebida[4], instrumento[4], animal[4])
         respostasColuna5.push(cor[5], cantores[5], bebida[5], instrumento[5], animal[5])
         
-        console.log(respostasColuna1)
-
-    // if (respostasColuna1 == respostasColuna1) {
-    //     alert("Deu certo")
-    // } else {
-    //     alert("Deu errado")
-    // }
+        var auxiliar1Correto = ["Amarelo", "Zucchero Fornaciari", "Água", "Harpa", "Gatos"]
+        var auxiliar2Correto = ["Azul", "Laura Pausini", "Chá", "Piano", "Cavalos"]
+        var auxiliar3Correto = ["Vermelha", "Luciano Pavarotti", "Leite", "Flauta", "Passáros"]
+        var auxiliar4Correto = ["Verde", "Andrea Bocelli", "Café", "Trombone", "Peixes"]
+        var auxiliar5Correto = ["Branco", "Andre Rieu", "Vinho", "Violino", "Cachorros"]
+        
+        if (respostasColuna1 == auxiliar1Correto) {
+        alert("Deu certo")
+    } else {
+        alert("Deu errado")
+    }
+    
+    console.log(cor)
+    console.log(cantores)
+    console.log(bebida)
+    console.log(instrumento)
+    console.log(animal)
+    console.log(respostasColuna1)
+    console.log(auxiliar1Correto)
+    
+    var cor = [casa1_selectCor.value, casa2_selectCor.value, casa3_selectCor.value, casa4_selectCor.value, casa5_selectCor.value]
+    var cantores = [casa1_selectCantores.value, casa2_selectCantores.value, casa3_selectCantores.value, casa4_selectCantores.value, casa5_selectCantores.value]
+    var bebida = [casa1_selectBebida.value, casa2_selectBebida.value, casa3_selectBebida.value, casa4_selectBebida.value, casa5_selectBebida.value]
+    var instrumento = [casa1_selectInstrumento.value, casa2_selectInstrumento.value, casa3_selectInstrumento.value, casa4_selectInstrumento.value, casa5_selectInstrumento.value]
+    var animal = [casa1_selectAnimal.value, casa2_selectAnimal.value, casa3_selectAnimal.value, casa4_selectAnimal.value, casa5_selectAnimal.value]
 }
 
-    //     var primeira = (validacao1.value)
-    
-        if (primeira_validacao == respostasColuna1[1]) {
-        var primeira_validacao = document.getElementById('casa1_selectCor')
-        primeira_validacao.style.border = '2px solid #00ff00'
-    } 
+//     var primeira = (validacao1.value)
+
+    //     if (primeira_validacao == respostasColuna1[1]) {
+    //     var primeira_validacao = document.getElementById('casa1_selectCor')
+    //     primeira_validacao.style.border = '2px solid #00ff00'
+    // } 
     // else {
     
     // }
@@ -403,22 +416,30 @@
     //     dica: 'O inglês vive na casa vermelha',
     //     resposta: '1'
     // }, 'O sueco tem Cachorros como animais de estimação']
-
+    
     // function teste() {
-    //     console.log("TESTANDO!");
-    //     console.log(c1_s1)
-    //     console.log(c1_s2)
-
-    //     if (c1_s1.value == "1") {
-    //         for (var i = 0; i < dicas.length; i++) {
+        //     console.log("TESTANDO!");
+        //     console.log(c1_s1)
+        //     console.log(c1_s2)
+        
+        //     if (c1_s1.value == "1") {
+            //         for (var i = 0; i < dicas.length; i++) {
     //             var elemento_atual = dicas[i];
-
+    
     //         }
     //     } else {
 
-    //     }
-    // }
-
-    // Registrar as instrucoes no banco de dados
-    // Fazer um fatch para pegar essas instrucoes e um outro fatch para validar se os selects estão corretos
-</script>
+        //     }
+        // }
+        
+        // Registrar as instrucoes no banco de dados
+        // Fazer um fatch para pegar essas instrucoes e um outro fatch para validar se os selects estão corretos
+        
+        
+        
+        // var select = document.getElementById('casa1_selectCor')
+        
+        // select.addEventListener('change', function(){
+        //     console.log(select.value)
+        // })
+    </script>

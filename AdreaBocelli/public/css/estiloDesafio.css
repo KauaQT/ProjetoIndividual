@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&family=Nunito&family=Roboto:wght@300;400&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis&family=Inter&family=Nunito&family=Roboto:wght@300;400&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis&family=Nunito&family=Orbitron:wght@500&family=Roboto:wght@300;400&family=Satisfy&display=swap');
 
 body {
     margin: 0;
@@ -9,8 +10,9 @@ body {
 .jogo_select {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
     align-items: center;
+    width: 100%;
 }
 
 .coluna_caracteristicas {
@@ -48,13 +50,18 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    width: 100%;
 }
 
-.titulo_desafio {
+.topo {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     font-family: "Bebas Neue";
     font-size: 40px;
+}
+
+.topo h2 {
+    color: #172953;
 }
 
 .instrucoes_jogo_select {
@@ -62,8 +69,7 @@ body {
     justify-content: center;
     gap: 100px;
     font-family: "Nunito";
-    font-size: 22px;
-    flex-direction: row;
+    font-size: 17.3px;
 }
 
 .lado_esquerdo_instrucoes {
@@ -76,4 +82,26 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.timer button {
+    display: flex;
+    font-family: "Orbitron";
+    align-items: center;
+    color: #172953;
+    font-weight: bold;
+    width: 180px;
+    justify-content: center;
+    background: none;
+    height: 60px;
+    gap: 5px;
+    font-size: 40px;
+    border: 4px solid #172953;
+    border-radius: 15px;
+    cursor: pointer; 
 }
