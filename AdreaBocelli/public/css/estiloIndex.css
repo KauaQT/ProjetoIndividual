@@ -27,7 +27,7 @@ body {
   width: 0;
   height: 3px;
   left: 0;
-  background-color: #ffffff;
+  background-color: #A49513;
   transition: 0.7s ease-in-out;
   bottom: -5px;
   border-radius: 4px;
@@ -60,7 +60,6 @@ body {
   font-family: "Bebas Neue";
   border: 5px, solid, #ffffff;
   cursor: pointer;
-  
 }
 
 .conteudo_inicial {
@@ -118,6 +117,10 @@ body {
 
 .historia {
   display: flex;
+}
+
+.historia iframe {
+  border-radius: 35px;
 }
 
 .lado_esquerdo {
@@ -193,10 +196,24 @@ body {
   border: 3px solid #ffffff;
 }
 
+.botao_login:hover {
+  border: 3px solid #A49513;
+  color: #A49513;
+  box-shadow: 0 0 70px rgba(144, 135, 19, 0.7);
+  transition: 1s;
+}
+
 .nav_bar .botao_cadastro {
   width: 150px;
   height: 50px;
   border: 3px solid #ffffff;
+}
+
+.botao_cadastro:hover {
+  border: 3px solid #A49513;
+  color: #A49513;
+  box-shadow: 0 0 70px rgba(144, 135, 19, 0.7);
+  transition: 1s;
 }
 
 .titulo_tenor {
@@ -384,7 +401,7 @@ body {
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
-  padding: 50px 10px 10px 10px ;
+  padding: 80px 10px 10px 10px ;
   scroll-behavior: smooth;
 }
 

@@ -77,6 +77,15 @@ body {
     font-family: "Bebas Neue";
     font-size: 20px;
     box-shadow: -6px 6px 30px rgba(48, 38, 37, 0.8);
+    cursor: pointer;
+}
+
+button:hover {
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    background-color: #302625;
+    transition: 1s;
+    transform: scale(1.1);
 }
 
 .container_login .rodape a {

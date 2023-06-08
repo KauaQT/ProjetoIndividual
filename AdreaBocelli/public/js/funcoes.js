@@ -67,7 +67,7 @@ const showHideIcons = () => {
         arrowIcons[0].style.display = "block"
     }
     
-    if (carousel.scrollLeft == 1) {
+    if (carousel.scrollLeft == scrollWidth) {
         arrowIcons[1].style.display = "none";
     } else {
         arrowIcons[1].style.display = "block"
