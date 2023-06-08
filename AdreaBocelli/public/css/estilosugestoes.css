@@ -3,7 +3,7 @@
 body {
     margin: 0;
     /* background-color: #000000; */
-    background: radial-gradient(137.79% 137.79% at 52.26% 50%, #175cff 0%, #000000 100%);
+    background: radial-gradient(137.79% 137.79% at 52.26% 50%, #1223aa 0%, #0C3066 32.17%);
     width: 100%;
     height: 100%;
 }
@@ -34,7 +34,7 @@ body {
     flex-direction: column;
     font-family: "Bebas Neue";
     font-size: 30px;
-    gap: 15px;
+    gap: 40px;
     align-items: center;
 }
 
@@ -57,7 +57,7 @@ body {
     width: 85%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 35px;
     padding: 50px 10px 0 10px;
 }
 
@@ -108,21 +108,21 @@ body {
 .texto_bocelli {
     color: #ffffff;
     font-family: "Nunito";
-    font-size: 20px;
+    font-size: 19.8px;
     text-align: center;
 }
 
 .texto_pausini {
     color: #ffffff;
     font-family: "Nunito";
-    font-size: 20px;
+    font-size: 19.8px;
     text-align: center;
 }
 
 .texto_pavarotti {
     color: #ffffff;
     font-family: "Nunito";
-    font-size: 20px;
+    font-size: 19.8px;
     text-align: center;
 }
 
@@ -147,4 +147,21 @@ body {
 .convite button:hover {
     transform: scale(1.1);
     box-shadow: 0px 7px 4px #ffffff;
+}
+
+.titulos {
+    font-family: "Bebas Neue";
+    color: #ffffff;
+    font-size: 30px;
+    text-shadow: rgb(0, 0, 0, 1) 5px 5px 3px;
+}
+
+.atual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    background-color: red;
+    border-radius: 30px;
 }

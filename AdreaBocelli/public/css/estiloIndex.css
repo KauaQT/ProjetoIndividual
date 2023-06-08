@@ -17,7 +17,6 @@ body {
   gap: 400px;
 }
 
-
 .nav_bar div a {
   position: relative;
 }
@@ -26,10 +25,10 @@ body {
   content: "";
   position: absolute;
   width: 0;
-  height: 2.65px;
+  height: 3px;
   left: 0;
   background-color: #ffffff;
-  transition: .5s ease-in-out;
+  transition: 0.7s ease-in-out;
   bottom: -5px;
   border-radius: 4px;
 }
@@ -72,7 +71,6 @@ body {
 .imagem_inicial {
   width: 50%;
   height: 590px;
-  /* background-image: url(../assets/img_inicial.svg); */
 }
 
 .conteudo_inicial {
@@ -93,6 +91,7 @@ body {
   font-size: 70px;
   font-weight: 900;
   color: #A49513;
+  text-shadow: rgba(164, 149, 36, 0.9) 0px 0px 50px
 }
 
 .biografia {
@@ -123,7 +122,6 @@ body {
 
 .lado_esquerdo {
   width: 45%;
-  /* background-color: yellow; */
   font-family: "Roboto";
   color: #ffffff;
   font-size: 21px;
@@ -137,19 +135,16 @@ body {
 
 .interseccao {
   width: 10%;
-  /* background-color: red; */
 }
 
 .lado_direito {
   width: 45%;
-  /* background-color: violet; */
   font-family: "Roboto";
   color: #ffffff;
   font-size: 21px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 500px; */
   text-align: justify;
   padding: 0 40px 0 0;
 }
@@ -181,11 +176,15 @@ body {
 }
 
 .Con_te_partiro {
-  margin-top: 580px;
+  margin-top: 650px;
+}
+
+.Time_to_say_goodbye {
+  margin-top: 50px;
 }
 
 .esquerdo_quinto_texto {
-  margin-top: 550px;
+  margin-top: 580px;
 }
 
 .nav_bar .botao_login {
@@ -270,22 +269,29 @@ body {
   font-family: "Bebas Neue";
 }
 
-.segurar_carrosel {
+/* .segurar_carrosel {
   margin: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  position: relative;
 }
 
 .carrosel {
-  width: 300px;
-  height: 500px;
+  width: 350px;
+  height: 430px;
   overflow: hidden;
   border-radius: 15px;
   transition: all 0.4s;
-  background-color: yellow;
+  display: flex;
+  align-items: center;
+}
+
+.carrosel img {
+  border-radius: 15px;
+  display: flex;
+  position: relative;
 }
 
 .slides {
@@ -297,6 +303,7 @@ body {
   margin-left: 0;
   transition: all 2s;
 }
+
 
 .botao {
   position: absolute;
@@ -315,21 +322,95 @@ body {
   transform: scale(1.5)
 }
 
-/* #voltar {
+#voltar {
   top: 50%;
-  left: 10%;
-}  */
+  left: 35%;
+} 
 
-/* 
 #avancar {
   top: 50%;
-  right: 10%;
+  right: 35%;
 }
 
 .balls {
   position: absolute;
-  width: 1024px;
   display: flex;
-  justify-content: center;
   margin-top: -45px;
+}
+
+.balls div {
+  transition: all 0.5s;
+  border: 3px solid #ffffff;
+  padding: 6px;
+  border-radius: 50%;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.balls div:hover {
+    background: #ffffff;
 } */
+
+.wrapper {
+  max-width: 772px;
+  position: relative;
+}
+
+.wrapper i {
+  height: 40px;
+  width: 40px;
+  top: 55%;
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.wrapper i:first-child {
+  left: -65px;
+  display: none;
+}
+
+.wrapper i:last-child {
+  right: -65px;
+}
+
+.wrapper .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 50px 10px 10px 10px ;
+  scroll-behavior: smooth;
+}
+
+.carousel .dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel .dragging img {
+  pointer-events: none;
+}
+
+.carousel img {
+  height: 240px;
+  object-fit: cover;
+  margin-left: 14px;
+  width: 240px
+}
+
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+.segurar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}

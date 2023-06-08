@@ -4,7 +4,7 @@ body {
     background: linear-gradient(to right, #989898, #000000);
     display: flex;
     justify-content: space-between;
-    align-items: center !important;
+    align-items: center;
     margin: 0;
     margin-left: 320px;
 }
@@ -88,11 +88,11 @@ body {
     font-size: 20px;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.8);
     margin-top: 13px;
+    cursor: pointer;
 }
 
 .Img_cadastro img {
-    filter: blur(6.5px);
+    filter: blur(4.5px);
     width: 750px;
     height: 740px;
 }
-/* filter: blur() */

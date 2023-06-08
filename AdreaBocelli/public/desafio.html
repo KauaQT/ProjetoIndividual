@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> </title>
+    <title>Desafio do Bochelão</title>
     <link rel="stylesheet" href="css/estiloDesafio.css">
-    <script src="js/desafio.js"></script>
+    <link rel="icon" href="assets/Logo.svg">
 </head>
 
 <body>
@@ -41,11 +41,11 @@
                 <div>
                     <select id="casa1_selectCor">
                         <option value=""></option>
-                        <option value="1">Amarelo</option>
-                        <option value="2">Azul</option>
-                        <option value="3">Branca</option>
-                        <option value="4">Verde</option>
-                        <option value="5">Vermelha</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Branca">Branca</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelha">Vermelha</option>
                     </select>
                 </div>
                 <div>
@@ -253,7 +253,7 @@
                 <div>
                     <select id="casa5_selectCor">
                         <option value=""></option>
-                        <option value="Amarelo">Amarel</option>
+                        <option value="Amarelo">Amarelo</option>
                         <option value="Azul">Azul</option>
                         <option value="Branca">Branca</option>
                         <option value="Verde">Verde</option>
@@ -355,91 +355,289 @@
         </div>
     </div>
     <button onclick="validar()">Validação</button>
+    <div id="exibir"></div>
 </body>
 
 </html>
 
 <script>
 
-var respostasColuna1 = []
-var respostasColuna2 = []
-var respostasColuna3 = []
-var respostasColuna4 = []
-var respostasColuna5 = []
+// var respostasColuna1 = []
+// var respostasColuna2 = []
+// var respostasColuna3 = []
+// var respostasColuna4 = []
+// var respostasColuna5 = []
 
+// var auxiliar1Correto = ["Amarelo", "Zucchero Fornaciari", "Água", "Harpa", "Gatos"]
+// var auxiliar2Correto = ["Azul", "Laura Pausini", "Chá", "Piano", "Cavalos"]
+// var auxiliar3Correto = ["Vermelha", "Luciano Pavarotti", "Leite", "Flauta", "Passáros"]
+// var auxiliar4Correto = ["Verde", "Andrea Bocelli", "Café", "Trombone", "Peixes"]
+// var auxiliar5Correto = ["Branco", "Andre Rieu", "Vinho", "Violino", "Cachorros"]
+
+//     var cor = [casa1_selectCor.value, casa2_selectCor.value, casa3_selectCor.value, casa4_selectCor.value, casa5_selectCor.value]
+//     var cantores = [casa1_selectCantores.value, casa2_selectCantores.value, casa3_selectCantores.value, casa4_selectCantores.value, casa5_selectCantores.value]
+//     var bebida = [casa1_selectBebida.value, casa2_selectBebida.value, casa3_selectBebida.value, casa4_selectBebida.value, casa5_selectBebida.value]
+//     var instrumento = [casa1_selectInstrumento.value, casa2_selectInstrumento.value, casa3_selectInstrumento.value, casa4_selectInstrumento.value, casa5_selectInstrumento.value]
+//     var animal = [casa1_selectAnimal.value, casa2_selectAnimal.value, casa3_selectAnimal.value, casa4_selectAnimal.value, casa5_selectAnimal.value]
+
+//     respostasColuna1.push(cor[0], cantores[0], bebida[0], instrumento[0], animal[0])
+//     respostasColuna2.push(cor[1], cantores[1], bebida[1], instrumento[1], animal[1])
+//     respostasColuna3.push(cor[2], cantores[2], bebida[2], instrumento[2], animal[2])
+//     respostasColuna4.push(cor[3], cantores[3], bebida[3], instrumento[3], animal[3])
+//     respostasColuna5.push(cor[4], cantores[4], bebida[4], instrumento[4], animal[4])        
 function validar() {
 
-        respostasColuna1.push(cor[1], cantores[1], bebida[1], instrumento[1], animal[1])
-        respostasColuna2.push(cor[2], cantores[2], bebida[2], instrumento[2], animal[2])
-        respostasColuna3.push(cor[3], cantores[3], bebida[3], instrumento[3], animal[3])
-        respostasColuna4.push(cor[4], cantores[4], bebida[4], instrumento[4], animal[4])
-        respostasColuna5.push(cor[5], cantores[5], bebida[5], instrumento[5], animal[5])
-        
-        var auxiliar1Correto = ["Amarelo", "Zucchero Fornaciari", "Água", "Harpa", "Gatos"]
-        var auxiliar2Correto = ["Azul", "Laura Pausini", "Chá", "Piano", "Cavalos"]
-        var auxiliar3Correto = ["Vermelha", "Luciano Pavarotti", "Leite", "Flauta", "Passáros"]
-        var auxiliar4Correto = ["Verde", "Andrea Bocelli", "Café", "Trombone", "Peixes"]
-        var auxiliar5Correto = ["Branco", "Andre Rieu", "Vinho", "Violino", "Cachorros"]
-        
-        if (respostasColuna1 == auxiliar1Correto) {
-        alert("Deu certo")
+    var corretas = 0;
+    var erradas = 0;
+
+    var select = document.getElementById('casa1_selectCor');
+	var valor = select.options[select.selectedIndex].value;
+	console.log(valor);
+    
+    if (valor == "Amarelo") {
+        corretas++
     } else {
-        alert("Deu errado")
+        erradas++
+    }
+
+    var select2 = document.getElementById('casa1_selectCantores');
+    var valor2 = select2.options[select2.selectedIndex].value;
+    
+    if (valor2 == "Zucchero Fornaciari") {
+        corretas++
+    } else {
+        erradas++
     }
     
-    console.log(cor)
-    console.log(cantores)
-    console.log(bebida)
-    console.log(instrumento)
-    console.log(animal)
-    console.log(respostasColuna1)
-    console.log(auxiliar1Correto)
+    var select3 = document.getElementById('casa1_selectBebida');
+    var valor3 = select3.options[select3.selectedIndex].value;
     
-    var cor = [casa1_selectCor.value, casa2_selectCor.value, casa3_selectCor.value, casa4_selectCor.value, casa5_selectCor.value]
-    var cantores = [casa1_selectCantores.value, casa2_selectCantores.value, casa3_selectCantores.value, casa4_selectCantores.value, casa5_selectCantores.value]
-    var bebida = [casa1_selectBebida.value, casa2_selectBebida.value, casa3_selectBebida.value, casa4_selectBebida.value, casa5_selectBebida.value]
-    var instrumento = [casa1_selectInstrumento.value, casa2_selectInstrumento.value, casa3_selectInstrumento.value, casa4_selectInstrumento.value, casa5_selectInstrumento.value]
-    var animal = [casa1_selectAnimal.value, casa2_selectAnimal.value, casa3_selectAnimal.value, casa4_selectAnimal.value, casa5_selectAnimal.value]
+    if (valor3 == "Água") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select4 = document.getElementById('casa1_selectInstrumento');
+    var valor4 = select4.options[select4.selectedIndex].value;
+
+    if (valor4 == "Harpa") {
+        corretas++
+    } else {
+        erradas++
+    }
+
+    var select5 = document.getElementById('casa1_selectAnimal');
+    var valor5 = select5.options[select5.selectedIndex].value;
+    
+    if (valor5 == "Gatos") {
+        corretas++
+    } else {
+        erradas++
+    }
+
+    /* segunda coluna okkkkkkkkkkkkkkkkkkkkkkkkkkk*/
+        
+    var select6 = document.getElementById('casa2_selectCor');
+    var valor6 = select6.options[select6.selectedIndex].value;
+        
+    if (valor6 == "Azul") {
+        corretas++
+    } else {
+        erradas++
+    }
+
+    var select7 = document.getElementById('casa2_selectCantores');
+    var valor7 = select7.options[select7.selectedIndex].value;
+        
+    if (valor7 == "Laura Pausini") {
+        corretas++
+    } else {
+            erradas++
+    }
+
+    var select8 = document.getElementById('casa2_selectBebida');
+    var valor8 = select8.options[select8.selectedIndex].value;
+    
+    if (valor8 == "Chá") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select9 = document.getElementById('casa2_selectInstrumento');
+    var valor9 = select9.options[select9.selectedIndex].value;
+    
+    if (valor9 == "Piano") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select10 = document.getElementById('casa2_selectAnimal');
+    var valor10 = select10.options[select10.selectedIndex].value;
+    
+    if (valor10 == "Cavalos") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    /* Terceira coluna */
+    
+    var select11 = document.getElementById('casa3_selectCor');
+    var valor11 = select11.options[select11.selectedIndex].value;
+    
+    if (valor11 == "Vermelha") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select12 = document.getElementById('casa3_selectCantores');
+    var valor12 = select12.options[select12.selectedIndex].value;
+    
+    if (valor12 == "Luciano Pavarotti") {
+        corretas++
+    } else {
+        erradas++
+    }
+
+    var select13 = document.getElementById('casa3_selectBebida');
+    var valor13 = select13.options[select13.selectedIndex].value;
+    
+    if (valor13 == "Leite") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select14 = document.getElementById('casa3_selectInstrumento');
+    var valor14 = select14.options[select14.selectedIndex].value;
+    
+    if (valor14 == "Flauta") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select15 = document.getElementById('casa3_selectAnimal');
+    var valor15 = select15.options[select15.selectedIndex].value;
+    
+    if (valor15 == "Pássaros") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select16 = document.getElementById('casa4_selectCor');
+    var valor16 = select16.options[select16.selectedIndex].value;
+    
+    if (valor16 == "Verde") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select17 = document.getElementById('casa4_selectCantores');
+    var valor17 = select17.options[select17.selectedIndex].value;
+    
+    if (valor17 == "Andrea Bocelli") {
+        corretas++
+    } else {
+        erradas++
+    }
+
+    var select18 = document.getElementById('casa4_selectBebida');
+    var valor18 = select18.options[select18.selectedIndex].value;
+
+    if (valor18 == "Café") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select19 = document.getElementById('casa4_selectInstrumento');
+    var valor19 = select19.options[select19.selectedIndex].value;
+    
+    if (valor19 == "Trombone") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select20 = document.getElementById('casa4_selectAnimal')
+    var valor20 = select20.options[select20.selectedIndex].value;
+    
+    if (valor20 == "Peixes") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select21 = document.getElementById('casa5_selectCor');
+    var valor21 = select21.options[select21.selectedIndex].value;
+    
+    if (valor21 == "Branco") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select22 = document.getElementById('casa5_selectCantores');
+    var valor22 = select22.options[select22.selectedIndex].value;
+    
+    if (valor22 == "Andre Rieu") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select23 = document.getElementById('casa5_selectBebida');
+    var valor23 = select23.options[select23.selectedIndex].value;
+
+    if (valor23 == "Vinho") {
+        corretas++
+    } else {
+        erradas++
+    }
+    
+    var select24 = document.getElementById('casa5_selectInstrumento');
+    var valor24 = select24.options[select24.selectedIndex].value;
+    
+    if (valor24 == "Violino") {
+        corretas++
+    } else {
+        erradas++
+    } 
+    
+    var select25 = document.getElementById('casa5_selectAnimal');
+    var valor25 = select25.options[select25.selectedIndex].value;
+    
+    if (valor25 == "Cachorros") {
+        corretas++
+    } else {
+        erradas++
+    }
+
+    exibir.innerHTML = `Escolhas corretas: ${corretas}<br>Escolhas erradas: ${erradas}`
+    
 }
+
 
 //     var primeira = (validacao1.value)
 
-    //     if (primeira_validacao == respostasColuna1[1]) {
+//     if (primeira_validacao == respostasColuna1[1]) {
     //     var primeira_validacao = document.getElementById('casa1_selectCor')
     //     primeira_validacao.style.border = '2px solid #00ff00'
     // } 
     // else {
-    
-    // }
-    // var dicas = ['O inglês vive na casa vermelha', 'O sueco tem Cachorros como animais de estimação']
-    // var dicas = [{
-    //     dica: 'O inglês vive na casa vermelha',
-    //     resposta: '1'
-    // }, 'O sueco tem Cachorros como animais de estimação']
-    
-    // function teste() {
-        //     console.log("TESTANDO!");
-        //     console.log(c1_s1)
-        //     console.log(c1_s2)
         
-        //     if (c1_s1.value == "1") {
-            //         for (var i = 0; i < dicas.length; i++) {
-    //             var elemento_atual = dicas[i];
-    
-    //         }
-    //     } else {
+        // }
 
+        // for (var i = 0; i < respostasColuna1; i++) {
+        //     if (respostasColuna1[0] == auxiliar1Correto[0]) {
+        //         alert("Deu certo")
         //     }
         // }
-        
-        // Registrar as instrucoes no banco de dados
-        // Fazer um fatch para pegar essas instrucoes e um outro fatch para validar se os selects estão corretos
-        
-        
-        
-        // var select = document.getElementById('casa1_selectCor')
-        
-        // select.addEventListener('change', function(){
-        //     console.log(select.value)
-        // })
-    </script>
+</script>
