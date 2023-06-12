@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Desafio</title>
+    <link rel="stylesheet" href="css/estiloRanking.css">
+    <link rel="icon" href="assets/Logo.svg">
+</head>
+
+
+    <body scroll="si" style="overflow: hidden" onload="informarPontuacao(), updatePontos2()"></body>
+    <div class="container">
+        <div class="nav_bar_lateral">
+            <div class="logo">
+                <img src="assets/Logo.svg">
+            </div>
+            <div class="topicos">
+                <div>
+                    <a href="sugestoes.html" class="hoverzin">
+                        Sugestões
+                    </a>
+                </div>
+                <div>
+                    <a href="desafio.html" class="hoverzin">
+                        Desafio
+                    </a>
+                </div>
+                <div class="atual">
+                    <a href="ranking.html">
+                        Ranking
+                    </a>
+                </div>
+            </div>
+            <div class="rodape_nav_bar_lateral">
+                <a href="index.html" class="hoverzin">
+                    Página inicial
+                </a>
+            </div>
+        </div>
+    <div class="primeiroEsegundoRanking">
+        <div class="rankingMaiorPontuacao">
+
+            <table id="rankingMaioresAcertos">
+                <tr>
+                    <th class="titulosRanking">
+                        Posição
+                    </th>
+                    <th class="titulosRanking">
+                        jogador
+                    </th>
+                    <th class="titulosRanking">
+                        Quantidade de Acertos
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+        <div class="rankingMaiorPontuacaoMenorTempo">
+
+            <table id="MaiorPontuacaoMenorTempo">
+                <tr>
+                    <th class="titulosRanking">
+                        Posição
+                    </th>
+                    <th class="titulosRanking">
+                        Jogador
+                    </th>
+                    <th class="titulosRanking">
+                        Qtd.Acertos em Menor Tempo
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+    <div class="terceiroRanking">
+        <table id="rankingMaisErros">
+            <tr>
+                <th>
+                    Posição    
+                </th>
+                <th>
+                    Jogador
+                </th>
+                <th>
+                    Quantidade de erros
+                </th>
+            </tr>
+        </table>
+    </div>
+
+</html>
+
+<script>
+    function informarPontuacao() {
+        //aguardar();
+        fetch("/usuarios/listarPontuacao").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var table = document.getElementById("rankingMaioresAcertos");
+                    for (var contador = 0; contador < resposta.length; contador++) {
+                        var publicacao = resposta[contador];
+                        // criando e manipulando elementos do HTML via JavaScript
+
+                        console.log(publicacao)
+                        // // cria um novo elemento div
+                        // e dá à ele conteúdo
+                        var tdPos = document.createElement("td");
+                        var tdNome = document.createElement("td");
+                        var tdAcertos = document.createElement("td");
+                        var tableTr = document.createElement("tr");
+                        var hr = document.createElement("hr");
+
+                        tdPos.className = "text"
+                        tdNome.className = "text"
+                        tdAcertos.className = "text"
+                       
+                        tdPos.innerHTML = `${contador + 1}`;
+                        tdNome.innerHTML = `${publicacao.nome}`;
+                        tdAcertos.innerHTML = `${publicacao.acertos}`;
+
+                        // (APPENDCHILD) Cria um novo elemento de parágrafo e adiciona-o ao final do documento
+
+                        tableTr.appendChild(tdPos);
+                        tableTr.appendChild(tdNome);
+                        tableTr.appendChild(tdAcertos);
+                        table.appendChild(tableTr);
+                    }
+
+                    // finalizarAguardar();
+                });
+            } else {
+                swal("Ops", "Houve um erro na API!", "warning");
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+
+    function updatePontos2() {
+        //aguardar();
+        fetch("/usuarios/listarPontos").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var table = document.getElementById("MaiorPontuacaoMenorTempo");
+                    for (var contador = 0; contador < resposta.length; contador++) {
+                        var publicacao = resposta[contador];
+                        // criando e manipulando elementos do HTML via JavaScript
+
+                        console.log(publicacao)
+                        // // cria um novo elemento div
+                        // e dá à ele conteúdo
+                        var tdPos = document.createElement("td");
+                        var tdNome = document.createElement("td");
+                        var tdAcertos = document.createElement("td");
+                        var tableTr = document.createElement("tr");
+                        var hr = document.createElement("hr");
+
+                        tdPos.className = "text"
+                        tdNome.className = "text"
+                        tdAcertos.className = "text"
+                       
+                        tdPos.innerHTML = `${contador + 1}`;
+                        tdNome.innerHTML = `${publicacao.nome}`;
+                        tdAcertos.innerHTML = `${publicacao.acertos}`;
+
+                        // (APPENDCHILD) Cria um novo elemento de parágrafo e adiciona-o ao final do documento
+
+                        tableTr.appendChild(tdPos);
+                        tableTr.appendChild(tdNome);
+                        tableTr.appendChild(tdAcertos);
+                        table.appendChild(tableTr);
+                    }
+
+                    // finalizarAguardar();
+                });
+            } else {
+                swal("Ops", "Houve um erro na API!", "warning");
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+</script>
