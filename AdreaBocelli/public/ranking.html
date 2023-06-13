@@ -10,7 +10,8 @@
 </head>
 
 
-    <body scroll="si" style="overflow: hidden" onload="informarPontuacao(), updatePontos2()"></body>
+<body onload="informarPontuacao(), updatePontos2(), informarAcertosMenorTempo()"></body>
+<!-- <div class="ajuste"> -->
     <div class="container">
         <div class="nav_bar_lateral">
             <div class="logo">
@@ -39,59 +40,66 @@
                 </a>
             </div>
         </div>
-    <div class="primeiroEsegundoRanking">
-        <div class="rankingMaiorPontuacao">
+        <div class="primeiroEsegundoRanking">
+            <div class="ajuste">
+                <div class="rankingMaiorPontuacao">
 
-            <table id="rankingMaioresAcertos">
-                <tr>
-                    <th class="titulosRanking">
-                        Posição
-                    </th>
-                    <th class="titulosRanking">
-                        jogador
-                    </th>
-                    <th class="titulosRanking">
-                        Quantidade de Acertos
-                    </th>
-                </tr>
-            </table>
+                    <table id="rankingMaioresAcertos">
+                        <tr>
+                            <th class="titulosRanking">
+                                Posição
+                            </th>
+                            <th class="titulosRanking">
+                                jogador
+                            </th>
+                            <th class="titulosRanking">
+                                Quantidade de Acertos
+                            </th>
+                        </tr>
+                    </table>
 
+                </div>
+                <div class="rankingMaiorPontuacaoMenorTempo">
+
+                    <table id="QuantidadeErros">
+                        <tr>
+                            <th class="titulosRanking">
+                                Posição
+                            </th>
+                            <th class="titulosRanking">
+                                Jogador
+                            </th>
+                            <th class="titulosRanking">
+                                Quantidade de erros
+                            </th>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="terceiroRanking">
+                <table id="RankingMaisAcertosMenosTempo">
+                    <tr>
+                        <th>
+                            Posição
+                        </th>
+                        <th>
+                            Jogador
+                        </th>
+                        <th>
+                            Qtd. Acertos em menor tempo
+                        </th>
+                        <th>
+                             Tempo
+                        </th>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="rankingMaiorPontuacaoMenorTempo">
 
-            <table id="MaiorPontuacaoMenorTempo">
-                <tr>
-                    <th class="titulosRanking">
-                        Posição
-                    </th>
-                    <th class="titulosRanking">
-                        Jogador
-                    </th>
-                    <th class="titulosRanking">
-                        Qtd.Acertos em Menor Tempo
-                    </th>
-                </tr>
-            </table>
-
-        </div>
     </div>
-</div>
+<!-- </div> -->
 
-    <div class="terceiroRanking">
-        <table id="rankingMaisErros">
-            <tr>
-                <th>
-                    Posição    
-                </th>
-                <th>
-                    Jogador
-                </th>
-                <th>
-                    Quantidade de erros
-                </th>
-            </tr>
-        </table>
-    </div>
 
 </html>
 
@@ -123,7 +131,7 @@
                         tdPos.className = "text"
                         tdNome.className = "text"
                         tdAcertos.className = "text"
-                       
+
                         tdPos.innerHTML = `${contador + 1}`;
                         tdNome.innerHTML = `${publicacao.nome}`;
                         tdAcertos.innerHTML = `${publicacao.acertos}`;
@@ -157,7 +165,7 @@
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    var table = document.getElementById("MaiorPontuacaoMenorTempo");
+                    var table = document.getElementById("QuantidadeErros");
                     for (var contador = 0; contador < resposta.length; contador++) {
                         var publicacao = resposta[contador];
                         // criando e manipulando elementos do HTML via JavaScript
@@ -174,10 +182,10 @@
                         tdPos.className = "text"
                         tdNome.className = "text"
                         tdAcertos.className = "text"
-                       
+
                         tdPos.innerHTML = `${contador + 1}`;
                         tdNome.innerHTML = `${publicacao.nome}`;
-                        tdAcertos.innerHTML = `${publicacao.acertos}`;
+                        tdAcertos.innerHTML = `${publicacao.erros}`;
 
                         // (APPENDCHILD) Cria um novo elemento de parágrafo e adiciona-o ao final do documento
 
@@ -197,4 +205,62 @@
             // finalizarAguardar();
         });
     }
+
+
+    function informarAcertosMenorTempo() {
+        //aguardar();
+        fetch("/usuarios/acertosMinTempo").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var table = document.getElementById("RankingMaisAcertosMenosTempo");
+                    for (var contador = 0; contador < resposta.length; contador++) {
+                        var publicacao = resposta[contador];
+                        // criando e manipulando elementos do HTML via JavaScript
+
+                        console.log(publicacao)
+                        // // cria um novo elemento div
+                        // e dá à ele conteúdo
+                        var tdPos = document.createElement("td");
+                        var tdNome = document.createElement("td");
+                        var tdAcertos = document.createElement("td");
+                        var tdTempo = document.createElement("td");
+                        var tableTr = document.createElement("tr");
+                        var hr = document.createElement("hr");
+
+                        tdPos.className = "text"
+                        tdNome.className = "text"
+                        tdAcertos.className = "text"
+                        tdTempo.className = "text"
+
+                        tdPos.innerHTML = `${contador + 1}`;
+                        tdNome.innerHTML = `${publicacao.nome}`;
+                        tdAcertos.innerHTML = `${publicacao.acertos}`;
+                        tdTempo.innerHTML = `${publicacao.tempoTotal}`
+
+                        // (APPENDCHILD) Cria um novo elemento de parágrafo e adiciona-o ao final do documento
+
+                        tableTr.appendChild(tdPos);
+                        tableTr.appendChild(tdNome);
+                        tableTr.appendChild(tdAcertos);
+                        tableTr.appendChild(tdTempo);
+                        table.appendChild(tableTr);
+                    }
+
+                    // finalizarAguardar();
+                });
+            } else {
+                swal("Ops", "Houve um erro na API!", "warning");
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+
+
 </script>

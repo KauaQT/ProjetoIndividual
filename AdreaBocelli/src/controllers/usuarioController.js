@@ -102,6 +102,7 @@ function pontuacao(req, res) {
     var idUsuario = req.body.idUsuarioServer;
     var acertos = req.body.acertosServer;
     var erros = req.body.errosServer;
+    var tempo = req.body.tempoServer
 
     // Faça as validações dos valores
     if (idUsuario == undefined) {
@@ -113,7 +114,7 @@ function pontuacao(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.pontuacao(idUsuario, acertos, erros)
+        usuarioModel.pontuacao(idUsuario, acertos, erros, tempo)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -148,6 +149,40 @@ function pontuacao(req, res) {
             );
     }
 
+    function listarPontos(req, res) {
+        usuarioModel.listarPontos()
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+    function acertosMinTempo(req, res) {
+        usuarioModel.acertosMinTempo()
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
 
 module.exports = {
     entrar,
@@ -155,5 +190,7 @@ module.exports = {
     listar,
     testar,
     pontuacao,
-    listarPontuacao
+    listarPontuacao,
+    listarPontos,
+    acertosMinTempo
 }

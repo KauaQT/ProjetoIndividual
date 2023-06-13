@@ -44,16 +44,15 @@
             </div>
         </div>
 
-        <div class="conteudo_desafio">
+        <div class="conteudo_desafio" id="teste">
             <div class="topo">
                 <h2>Desafio</h2>
                 <div class="containerCronometro">
-                    <div class="timer">
-                        <button id="startbtn">
-                            <div class="tempo" id="minutes">00</div>
-                            <div class="separator">:</div>
-                            <div class="tempo" id="seconds">00</div>
-                        </button>
+                    <div class="timer" id="spanTimer">
+                        <span class="tempo" id="spanHora">00</span>:
+                        <span class="tempo" id="spanMinuto">00</span>:
+                        <span class="tempo" id="spanSegundo">00</span>
+
                     </div>
                     <!-- <div class="buttons">
                 <button class="btn" id="start">Iniciar</button>
@@ -388,9 +387,11 @@
                     </div>
                 </div>
             </div>
+            
             <div class="estilizacaoBotao">
-                <button onclick="validar()">Validar respostas</button>
+                <button onclick="validar()" >Validar respostas</button>
             </div>
+
         </div>
     </div>
 
@@ -406,16 +407,25 @@
     // var auxiliar4Correto = ["Verde", "Andrea Bocelli", "Café", "Trombone", "Peixes"]
     // var auxiliar5Correto = ["Branco", "Andre Rieu", "Vinho", "Violino", "Cachorros"]
 
-    Swal.fire({
-        imageUrl: 'assets/Swit instruções.jpg',
-        imageWidth: 500,
-        imageHeight: 300,
-        title: 'Instruções para o desafio!',
-        html: 'O jogo consiste numa adaptação do teste de Einstein <br><br> 1. Dada as instruções na parte inferior da tela, parametrize-as de acordo com as correspondentes casas<br> 2. Ao fim, será computado suas repostas corretas, erradas e o tempo em que levou para as responderem e que serão enviadas a um ranking',
-        confirmButtonText: 'Começar desafio!',
-        background: '#000',
-        color: '#FFF',
-    })
+    // document.addEventListener('DOMContentLoaded', () => {
+    //      aparecerSwal()
+    // })
+
+    
+        Swal.fire({
+            imageUrl: 'assets/Swit instruções.jpg',
+            imageWidth: 500,
+            imageHeight: 300,
+            title: 'Instruções para o desafio!',
+            html: 'O jogo consiste numa adaptação do teste de Einstein; <br><br> 1. Dada as instruções na parte inferior da tela, parametrize-as de acordo com as correspondentes casas<br> 2. Ao fim, será computado suas respostas corretas, erradas e o tempo em que levou para as responderem e, que serão enviadas a um ranking. <br>',
+            confirmButtonText: 'Começar desafio!',
+            background: '#000',
+            color: '#FFF',
+        })
+        
+        setTimeout(() => {
+            timer()
+        },1000)
 
     function validar() {
 
@@ -659,12 +669,12 @@
             erradas++
         }
 
-        if (corretas == 0 && corretas <= 10) {
+        if (corretas >= 0 && corretas <= 10) {
             image = 'assets/gif_cérebro_dormindo.gif',
                 message = `${nome}, Você acertou ${corretas}, não foi o melhor resultado, mas se sentiu desafiado? Procure saber mais sobre o jogo original.</b> Sua pontuação foi de
                             <b>${corretas}</b> pontos
                         </span>`;
-        }  
+        }
 
         if (corretas >= 11 && corretas <= 15) {
             image = 'assets/gif_11_15.gif',
@@ -673,7 +683,7 @@
                         </span>`;
         }
 
-        if (corretas >= 16 && corretas <= 19 ) {
+        if (corretas >= 16 && corretas <= 19) {
             image = 'assets/gif_16_19.jpg',
                 message = ` ${nome}, Quase entrou para o grupo dos destemidos em... você acertou 
                             <b>${corretas}</b>
@@ -694,6 +704,8 @@
                         </span>`;
         }
 
+        var tempoTotal = spanHora.innerText + ":" + spanMinuto.innerText + ":" + spanSegundo.innerText  
+
         fetch("/usuarios/pontuacao", {
             method: "POST",
             headers: {
@@ -704,7 +716,8 @@
                 // Agora vá para o arquivo routes/usuario.j
                 idUsuarioServer: idUsuarioVar,
                 acertosServer: corretas,
-                errosServer: erradas
+                errosServer: erradas,
+                tempoServer: tempoTotal
             })
         }).then(function (resposta) {
 
@@ -732,6 +745,55 @@
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
+    }
 
+
+    let timerSec = 0
+    let timerMin = 0
+    let timerHora = 0
+    var tempo = 0
+
+    function timer() {
+
+        minutoTimer = document.getElementById('spanMinuto')
+        segundoTimer = document.getElementById('spanSegundo')
+        horaTimer = document.getElementById('spanHora')
+
+        setInterval(() => {
+            if ((timerSec += 1) == 60) {
+                // timerSec++
+                // tempo = timerSec
+                timerSec = 0
+                timerMin ++
+                console.log(tempo, `wpockpweock`)
+            } 
+                
+            if ((timerMin) == 60) {
+                timerMin = 0
+                timerHora ++
+            }    
+
+
+            if (timerSec <= 9) {
+                segundoTimer.innerHTML = `0${timerSec}`
+            } else {
+                segundoTimer.innerHTML = timerSec
+            }
+
+            if (timerMin <= 9) {
+                minutoTimer.innerHTML = `0${timerMin}`
+            } else {
+                minutoTimer.innerHTML = timerMin
+            }
+
+            if (timerHora <= 24) {
+                horaTimer.innerHTML = `0${timerHora}`
+            }
+
+        }, 1000);
+
+        // var apagarTudo = document.getElementById('teste')
+        // apagarTudo.style.display = "none";
+        // validar().disable = true
     }
 </script>

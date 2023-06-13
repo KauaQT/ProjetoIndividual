@@ -28,4 +28,12 @@ router.get("/listarPontuacao", function (req, res) {
     usuarioController.listarPontuacao(req, res);
 });
 
+router.get("/listarPontos", function (req, res) {
+    usuarioController.listarPontos(req, res);
+});
+
+router.get("/acertosMinTempo", function (req, res) {
+    usuarioController.acertosMinTempo(req, res);
+});
+
 module.exports = router;
